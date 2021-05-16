@@ -14,5 +14,31 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $rs = 2 + 3;
+    $nm = "Igor";
+    $bg = '#rgb';
+    $clr = 'green';
+    return view('index', compact('rs', 'nm', 'bg', 'clr'));
 });
+
+
+Route::get('/welcome', function() {
+   return view('welcome');
+});
+
+
+//Route::post('/send-email', function() {
+//    if (!empty($_POST)) {
+//        dd($_POST);
+//    }
+//    return 'Send-email';
+//});
+
+
+//Route::match(['get', 'post'], '/contact', function() {
+//    dump($_POST);
+//    return view('contact');
+//});
+//
+//
+//Route::redirect('/contact', '/welcome');
