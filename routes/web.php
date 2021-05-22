@@ -13,32 +13,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $rs = 2 + 3;
-    $nm = "Igor";
-    $bg = '#rgb';
-    $clr = 'green';
-    return view('index', compact('rs', 'nm', 'bg', 'clr'));
+
+Route::get('/', 'IndexController@index');
+Route::get('/about', 'IndexController@about');
+Route::get('/page/about', 'PageController@show');
+
+
+Route::fallback(function() {
+    abort(404, "Page not found ... ");
 });
 
 
-Route::get('/welcome', function() {
-   return view('welcome');
-});
 
 
-//Route::post('/send-email', function() {
-//    if (!empty($_POST)) {
-//        dd($_POST);
-//    }
-//    return 'Send-email';
-//});
 
 
-//Route::match(['get', 'post'], '/contact', function() {
-//    dump($_POST);
-//    return view('contact');
-//});
-//
-//
-//Route::redirect('/contact', '/welcome');
+
+
+
+
+
+
