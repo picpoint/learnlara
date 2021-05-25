@@ -13,10 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-Route::get('/', 'IndexController@index');
-Route::get('/about', 'IndexController@about');
-Route::get('/page/about', 'PageController@show');
+Route::get('/', 'HomeController@index');
+Route::get('/page/{slug}', 'PageController@show');
 
 
 Route::fallback(function() {
