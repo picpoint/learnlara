@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <h1>About .... ))))</h1>
+    <h3>{{ $slug }} page ... ))))</h3>
 
 </body>
 </html>
